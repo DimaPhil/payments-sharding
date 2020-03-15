@@ -5,8 +5,8 @@ Implementation for sharding bank payments into several database instances and th
 ## Sharding
 
 Sharding is implemented using Consistent Hashing algorithm (because this way it'd easier to add/remove shard in runtime):
-* we use 10 copies of each database instance (it's configurable if needed)
-* Hash codes of `<ip address, port>` pairs are used to calculate where the MySQL instance should be placed on the circle.
+* we use 10 copies of each database instance (it is configurable in `application.yaml` if needed)
+* Hash codes of shard objects are used to calculate where the shard should be placed on the circle.
 * For each payment `<fromId, toId, amount>` we use `fromId.hashCode()` as a sharding key, because we want all payers with the same id to be stored on the same instance
 
 ## API

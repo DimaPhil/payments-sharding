@@ -6,7 +6,6 @@ import com.yandex.payments.sharding.api.service.payment.PaymentService;
 import com.yandex.payments.sharding.api.validator.payment.BatchPaymentRequestDtoValidator;
 import com.yandex.payments.sharding.dto.request.BatchPaymentRequestDto;
 import org.modelmapper.ModelMapper;
-import org.springframework.ui.ModelMap;
 
 import java.util.List;
 import java.util.stream.Collectors;

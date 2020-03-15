@@ -2,7 +2,6 @@ package com.yandex.payments.sharding.dto.request;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.yandex.payments.sharding.dto.DtoHelper;
 import com.yandex.payments.sharding.dto.factory.DtoFactory;
 import org.junit.Test;
 
@@ -11,7 +10,6 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 public class BatchPaymentRequestDtoTest {
     private final ObjectMapper objectMapper = new ObjectMapper();
