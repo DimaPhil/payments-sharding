@@ -29,14 +29,10 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public void batchSave(List<Payment> payments) {
-        Map<Long, List<Payment>> paymentsByPayer = payments
+        Map<PaymentDataSource, List<Payment>> paymentsByPayer = payments
             .stream()
-            .collect(Collectors.groupingBy(Payment::getFromId));
-        paymentsByPayer.forEach((payerId, value) -> {
-            Payment selfPayment = new Payment(0L, payerId, payerId, BigDecimal.ZERO);
-            PaymentDataSource dataSource = shardDistributor.getShard(selfPayment);
-            paymentRepository.save(dataSource, value);
-        });
+            .collect(Collectors.groupingBy(shardDistributor::getShard));
+        paymentsByPayer.forEach(paymentRepository::save);
     }
 
     @Override
