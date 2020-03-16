@@ -23,7 +23,8 @@ API contains three endpoints:
 * I didn't have much time to investigate how to setup any framework (Hibernate, jOOQ or something similar) with multiple datasources at once, so I implemented it just using raw queries
     * Connection pools are still used (using DBCP2)
     * There should be no SQL injections, because only internal integer numbers are being injected to the query
-* The same as above, I didn't have time to investigate how to set up Flyway or Liquibase on multiple data sources environment, so right now `payment` table in the database should be created manually 
+* The same as above, I didn't have time to investigate how to set up Flyway or Liquibase on multiple data sources environment, so right now `payment` table in the database should be created manually
+* It'd better to move logic for requesting data from the specific shard to a separate module/microservice - orchestrator, so that application knows nothing about shards and how everything works there, and only orchestrator manipulates with data and shards (we solve SRP problem this way)
 
 # Testing
 
