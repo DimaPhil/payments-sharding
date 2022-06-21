@@ -15,7 +15,7 @@
         <spring-boot-maven-plugin.mainClass>com.yandex.payments.sharding.api.PaymentsShardingApplication
         </spring-boot-maven-plugin.mainClass>
         <liquibase-core.version>3.8.5</liquibase-core.version>
-        <mysql-connector-java.version>8.0.18</mysql-connector-java.version>
+        <mysql-connector-java.version>8.0.28</mysql-connector-java.version>
         <equalsverifier.version>3.1.12</equalsverifier.version>
         <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
         <jooq.version>3.13.1</jooq.version>
